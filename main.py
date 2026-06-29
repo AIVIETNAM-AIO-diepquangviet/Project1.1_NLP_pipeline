@@ -87,8 +87,13 @@ def run_translation(text, target_code):
     source = detect_language(raw)
     if source is None:
         return {"ok": False, "error": "Không nhận diện được ngôn ngữ."}
-    if source in ['zh-cn','zh-tw']:
+    
+    # Fix lỗi khi trình dịch nhận ngôn ngữ dịch có viết Hoa
+    if source == 'zh-cn':
         source = 'zh-CN'
+    elif source == 'zh-tw':
+        source = 'zh-TW'
+        
     if source == target_code:
         return {
             "ok": True,
