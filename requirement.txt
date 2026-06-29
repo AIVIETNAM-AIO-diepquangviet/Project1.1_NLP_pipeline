@@ -1,0 +1,15 @@
+# Streamlit Web App Framework
+streamlit>=1.30.0
+
+# Language Coding and Identification
+langcodes>=3.3.0
+langdetect>=1.0.9
+
+# Natural Language Processing & Tokenization
+nltk>=3.8.1
+
+# Translation Engine
+deep-translator>=1.11.4
+
+# Spell Checking
+pyspellchecker>=0.8.1
