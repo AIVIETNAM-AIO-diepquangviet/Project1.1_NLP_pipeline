@@ -2,11 +2,12 @@
 #  Streamlit NLP Pipeline Demo — v2 (2 ứng dụng)
 #  App 1: Dịch văn bản  ·  App 2: Sửa lỗi chính tả
 # ==============================================================
+import langcodes
 import streamlit as st
 from deep_translator import GoogleTranslator
 from langdetect import DetectorFactory, LangDetectException, detect
 from nltk.tokenize import TreebankWordDetokenizer, wordpunct_tokenize
-from spellchecker import SpellChecker 
+from spellchecker import SpellChecker
 
 DetectorFactory.seed = 0 #dùng để cố định kết quả nhận diện ngôn ngữ, đảm bảo tính nhất quán sau mỗi lần chạy code
 MIN_INPUT_LENGTH = 3 # độ dài của văn bản cần xử lý ít nhất là 3 kí tự
