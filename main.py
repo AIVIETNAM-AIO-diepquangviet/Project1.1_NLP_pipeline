@@ -21,8 +21,8 @@ TARGET_LANGS = {
     "Tiếng Anh": "en",
     "Tiếng Pháp": "fr",
     "Tiếng Nhật": "ja",
-    "Tiếng Trung (Giản thể)": "zh-cn",
-    "Tiếng Trung (Phồn thể)": "zh-tw",
+    "Tiếng Trung (Giản thể)": "zh-CN",
+    "Tiếng Trung (Phồn thể)": "zh-TW",
     "Tiếng Hàn": "ko",
     "Tiếng Tây Ban Nha": "es",
     "Tiếng Đức": "de",
@@ -87,7 +87,8 @@ def run_translation(text, target_code):
     source = detect_language(raw)
     if source is None:
         return {"ok": False, "error": "Không nhận diện được ngôn ngữ."}
-
+    if source in ['zh-cn','zh-tw']:
+        source = 'zh-CN'
     if source == target_code:
         return {
             "ok": True,
